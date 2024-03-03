@@ -3,6 +3,7 @@ import './App.css';
 
 const App = (): ReactElement => (
   <div>
+    <h1>React App</h1>
   </div>
 );
 
