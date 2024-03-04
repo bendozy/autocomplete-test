@@ -20,7 +20,7 @@ const Autocomplete: React.FC = () => {
   );
 
   useEffect(() => {
-    //Detect Click Outside Autocomplete div and close the suggestions
+    // Detect Click Outside Autocomplete div and close the suggestions
     const handleOutsideClick = (event: Event) => {
       if (
         event.target &&
