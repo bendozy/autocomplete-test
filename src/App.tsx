@@ -5,8 +5,8 @@ import './App.css';
 
 const App = (): ReactElement => (
   <div className="app">
-    <h1>Autocomplete Demo</h1>
-    <p>Seach for Github Usernames</p>
+    <h1 data-testid="pageTitle">Autocomplete Demo</h1>
+    <p data-testid="pageDescription">Search for Github Usernames</p>
     <Autocomplete />
   </div>
 );

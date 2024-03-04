@@ -1,6 +1,10 @@
 # Deel Autocomplete Component
 
-This is a simple autocomplete component that enables one search for Github usernames
+This serves as a simple autocomplete component facilitating the search for Github usernames.
+
+### Side Note:
+
+When searching for users on Github, the search function doesn't exclusively search by username. As a result, some entries in the dropdown may not correspond precisely to the entered key. In such cases, the matching phrase could be the email or other identifying details, and the search text may not be highlighted.
 
 ##Setup + Installation
 Configure the environment variables and add a base URL
@@ -29,8 +33,7 @@ VITE_BASE_URL=https://api.github.com/search/users?q=
 - Run the Production build
 
   ```
-  npm run build
-
+  npm run preview
   ```
 
   Open the application: http://localhost:4173

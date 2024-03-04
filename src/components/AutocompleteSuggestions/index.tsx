@@ -29,8 +29,11 @@ const AutocompleteSuggestions: React.FC<AutocompleteSuggestionsProps> = ({
   };
 
   return (
-    <ul className="autocompleteSuggestions">
-      {suggestions.length === 0 && (
+    <ul
+      className="autocompleteSuggestions"
+      data-testid="autocompleteSuggestions"
+    >
+      {suggestions?.length === 0 && (
         <li className="noResult">No results found</li>
       )}
       {suggestions?.map((user) => (
