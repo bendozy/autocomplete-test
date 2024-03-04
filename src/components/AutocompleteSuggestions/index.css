@@ -1,0 +1,33 @@
+.autocompleteSuggestions {
+  width: 450px;
+  max-height: 250px;
+  margin: 0 auto;
+  overflow-y: scroll;
+  border: 1px solid #e8e6e6;
+  border-radius: 8px;
+  z-index: 1;
+  list-style: none;
+  padding: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.autocompleteSuggestions > li {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e8e6e6;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.autocompleteSuggestions > li:last-child {
+  border-bottom: none;
+}
+
+.autocompleteSuggestions > li.noResult {
+  cursor: default;
+}

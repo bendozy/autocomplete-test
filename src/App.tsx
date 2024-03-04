@@ -1,9 +1,13 @@
 import { ReactElement } from 'react';
+import Autocomplete from './components/Autocomplete';
+
 import './App.css';
 
 const App = (): ReactElement => (
-  <div>
-    <h1>React App</h1>
+  <div className="app">
+    <h1>Autocomplete Demo</h1>
+    <p>Seach for Github Usernames</p>
+    <Autocomplete />
   </div>
 );
 

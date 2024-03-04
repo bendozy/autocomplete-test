@@ -1,0 +1,43 @@
+.autocompleteInput {
+  position: relative;
+  display: inline-block;
+}
+
+.inputText {
+  width: 450px;
+  height: 32px;
+  padding: 8px;
+  border: 1px solid #e8e6e6;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.loadingIconWrapper {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.clearInputButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  appearance: none;
+  border: none;
+  border-radius: 50%;
+  background: gray;
+  margin: 0;
+  padding: 2px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.clearInputButton:hover {
+  background: darkgray;
+}

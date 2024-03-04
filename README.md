@@ -28,21 +28,20 @@ VITE_BASE_URL=https://api.github.com/search/users?q=
   ```
 - Run the Production build
 
-  ````
-  npm run build
   ```
+  npm run build
+
+  ```
+
   Open the application: http://localhost:4173
-  ````
 
 ## Testing
 
 - Run the test suite
 
-  ````
-  npm test
-
   ```
-  ````
+  npm test
+  ```
 
 ## Author
 
