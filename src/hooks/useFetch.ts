@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { GitHubUser } from '../types';
 
 type FetchState = {
-  data: GitHubUser[];
+  data?: GitHubUser[];
   error: Error | null;
   isLoading: boolean;
 };
 
 const useFetch = (url: string, searchTerm: string): FetchState => {
-  const [data, setData] = useState<GitHubUser[]>([]);
+  const [data, setData] = useState<GitHubUser[] | undefined>(undefined);
   const [error, setError] = useState<Error | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -17,21 +17,29 @@ const useFetch = (url: string, searchTerm: string): FetchState => {
       setError(null);
     }
 
-    if (!url || !searchTerm) {
-      if (data.length > 0) {
-        setData([]);
-      }
-
-      return;
+    if (data) {
+      setData(undefined);
     }
 
     const fetchData = async () => {
+      if (!url || !searchTerm) {
+        return;
+      }
+
       setIsLoading(true);
 
       try {
         const response = await fetch(url);
         const responseData = await response.json();
-        setData(responseData.items);
+
+        if (response.status === 200) {
+          setData(responseData.items);
+        }
+
+        //Rate Limiting 403 errors are not thrown as error by github api so it cant be caught
+        if (response.status === 403) {
+          setError(new Error(responseData.message));
+        }
       } catch (error) {
         setError(error as Error);
       }

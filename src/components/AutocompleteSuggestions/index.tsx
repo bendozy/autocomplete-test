@@ -5,7 +5,7 @@ import './index.css';
 
 interface AutocompleteSuggestionsProps {
   searchTerm: string;
-  suggestions: GitHubUser[];
+  suggestions?: GitHubUser[];
   onSelectSuggestion: (selectedSuggestion: GitHubUser) => void;
 }
 

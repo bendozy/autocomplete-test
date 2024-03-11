@@ -50,7 +50,11 @@ const Autocomplete: React.FC = () => {
   };
 
   return (
-    <div className="autocomplete" onFocus={() => setIsInputFocused(true)}>
+    <div
+      className="autocomplete"
+      onFocus={() => setIsInputFocused(true)}
+      ref={autoCompleteRef}
+    >
       <AutocompleteInput
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -59,7 +63,7 @@ const Autocomplete: React.FC = () => {
         onInputClear={handleInputClear}
       />
       {error && <div className="autocompleteError">{error.message}</div>}
-      {searchTerm && isInputFocused && !isLoading && !error && (
+      {searchTerm && isInputFocused && !isLoading &&data && !error && (
         <AutocompleteSuggestions
           searchTerm={searchTerm}
           suggestions={data}
